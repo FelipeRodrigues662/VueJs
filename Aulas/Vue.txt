@@ -1,0 +1,7 @@
+Diretivas:
+
+v-bind:'Atibutos' essa diretiva permite alterar o link de um href entre outras coisas;
+v-text permite colocar valores sem interculação de strings;
+v-once faz com que o elemento so seja rendenizado uma vez;
+v-html passa o html puro
+v-on manipulação de eventos

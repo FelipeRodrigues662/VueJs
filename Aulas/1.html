@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="app">
+    <p>{{message}}</p>
+    <p>Meu nome é: {{nome}}</p>
+    <input v-on:input="mudarNome">
+    
+    <p>{{nomeInstrutor()}}</p>
+  </div>
+
+  
+  <script >
+
+    var app = new Vue({
+    el: '#app',
+    data:{
+        message:  'Olá Vue',
+        nome: '',
+        instrutor: 'Felipe',
+
+    },
+    methods: {
+        mudarNome: function(event){
+            this.nome = event.target.value;
+        },
+        nomeInstrutor: function(){
+            //Nesse caso utilizo uma funlção para retornar o nome do instrutor
+            return this.instrutor;
+        }
+    },
+});
+  </script>
+
+</body>
+</html>
