@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="app">
+    <p>Nome: {{nomeCompleto}}</p>
+    <input @keyup.enter="alterarNome">
+  </div>
+
+  
+  <script >
+
+	var app = new Vue({
+    el: '#app',
+    data:{
+      primeiroNome: 'Felipe',
+      ultimoNome: 'Rodrigues',
+    },
+    computed:{
+      nomeCompleto: {
+        get: function(){
+          return this.primeiroNome + " " + this.ultimoNome;
+        },
+        set: function(novoNome){
+          let nomes = novoNome.split(' ');
+          this.primeiroNome = nomes[0];
+          this.ultimoNome = nomes[nomes.length - 1];
+        }
+      }
+    },
+    methods: {
+      alterarNome: function(event){
+        this.nomeCompleto = event.target.value;
+      }
+    },
+	});
+  </script>
+
+</body>
+</html>

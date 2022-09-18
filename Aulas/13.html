@@ -10,6 +10,7 @@
   
   <div id="app">
     <p>Nome: {{nomeCompleto}}</p>
+    <button @click="alterarNome">Alterar Nomes</button>
   </div>
 
   
@@ -20,7 +21,26 @@
     data:{
       primeiroNome: 'Felipe',
       ultimoNome: 'Rodirgues',
-      nomeCompleto: 'Felipe Rodrigues',
+      //nomeCompleto: 'Felipe Rodrigues',
+    },
+    computed: {
+      nomeCompleto: function(){
+        return this.primeiroNome + " " + this.ultimoNome;
+      }
+    },
+    // watch: {
+    //   primeiroNome: function(novoPNome, antigoPNome){
+    //     this.nomeCompleto = novoPNome + " " + this.ultimoNome;
+    //   },
+    //   ultimoNome: function(novoUNome, antigoUNome){
+    //     this.nomeCompleto = this.primeiroNome + " " + novoUNome;
+    //   }
+    // },
+    methods: {
+      alterarNome: function(event){
+        this.primeiroNome = "Rodrigues";
+        this.ultimoNome = "Felipe";
+      }
     },
   
 	});

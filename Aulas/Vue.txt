@@ -5,6 +5,10 @@ v-text permite colocar valores sem interculação de strings;
 v-once faz com que o elemento so seja rendenizado uma vez;
 v-html passa o html puro
 v-on ou @ manipulação de eventos
+v-model faz um two way data binding passando os valores e refletindo nos dois
 
 Coputed: trabalha com deependencias só será resecutada caso tenha um mudança;
 Methods: ele faz a cada rendenização
+Watch: ele ve qual propriedade que ele quer alterações 
+    devo ultilizr o watcher quando tiver que usar uma operação assincrona
+        ou qunando não tiver que retornar nenhum valor.
