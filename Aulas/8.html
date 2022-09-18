@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="app">
+   <input v-on:keyup="onKey" placeholder="Qulquer Tecla">
+   <br>
+   <input v-on:keyup.enter="onKey" placeholder="Tecla enter">
+   <br>
+   <input v-on:keyup.enter.escape="onKey" placeholder="Tecla enter ou escape">
+   <br>
+   <input v-on:keyup.arrow-up="onKey" placeholder="Tecla Seta Para cima">
+   <br>
+   <input v-on:keyup.ctrl.enter.exact="onKey" placeholder="Tecla Ctrl+Enter">
+
+  </div>
+
+  
+  <script >
+
+	var app = new Vue({
+    el: '#app',
+    methods: {
+      onKey: function(event){
+        console.log(`Tecla ${event.key} pressionada!`);
+      },
+    },
+  
+	});
+  </script>
+
+</body>
+</html>
