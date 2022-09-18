@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="app">
+   <a v-bind:href="docs">VueJs</a>
+   <br>
+   <button v-on:click="onClick">Clique</button>
+
+   <hr>
+
+   <a :href="docs">VueJs</a>
+   <!-- Atalhos do Vue js do v-bind e so deixar dois pontos -->
+   <br>
+   <button @click="onClick">Clique</button>
+   <!-- Já o v-on e so colocar um @ -->
+  </div>
+
+  
+  <script >
+
+	var app = new Vue({
+    el: '#app',
+    data:{
+      docs: 'https://vuejs.org',
+    },
+    methods: {
+      onClick: function(event){
+        console.log(`Evneto ${event.type}`);
+      }
+    },
+	});
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="app">
+    <button v-on:click.left="onClick">Botão Esquerdo</button>
+    <br>
+    <button v-on:click.middle="onClick">Botão do Meio</button>
+    <br>
+    <button v-on:click.right="onClick">Botão Direito</button>
+    <br>
+    <button v-on:click.right.prevent="onClick">Sem menu de Contexto</button>
+  </div>
+
+  
+  <script >
+
+	var app = new Vue({
+    el: '#app',
+    methods: {
+      onClick: function(event){
+        console.log(`Botão ${event.button} Pressionado`);
+      }
+    },
+  
+	});
+  </script>
+
+</body>
+</html>
