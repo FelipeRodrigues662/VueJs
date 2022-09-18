@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <title>Document</title>
+  <style>
+    .caixa{
+      width:  200px;
+      height: 200px;
+      display: inline-block;
+      margin-right: 10px;
+      background-color: gray;
+    }
+    .coral{
+      background-color: lightcoral;
+    }
+    .verde{
+      background-color: lightgreen;
+    }
+    .azul{
+      background-color: lightblue;
+    }
+    .circulo{
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  
+  <div id="app">
+   <div 
+   class="caixa"
+   :class="{ coral: aplicarClasse }"
+   @click="aplicarClasse = !aplicarClasse">
+  </div>
+
+  <div 
+    class="caixa"
+    :class="nomeDaClasse">
+  </div>
+
+
+  <div 
+  class="caixa"
+  :class="classesCss"
+  @click="aplicarClasse = !aplicarClasse">
+  </div>
+
+  <div 
+    class="caixa"
+    :class="['circulo', nomeDaClasse, { verde: aplicarClasse}]">
+  </div>
+
+  <input v-model="nomeDaClasse" placeholder="Nome da Classe Css">
+
+  </div>
+
+  
+  <script >
+
+	var app = new Vue({
+    el: '#app',
+    data:{
+      aplicarClasse: false,
+      nomeDaClasse: '', 
+    },
+    computed:{
+      classesCss: function(){
+        return{
+          azul: this.aplicarClasse,
+          circulo: this.aplicarClasse,
+          verde: !this.aplicarClasse
+        }
+      }
+    },
+  
+	});
+  </script>
+
+</body>
+</html>

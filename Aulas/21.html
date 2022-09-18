@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <title>Document</title>
+
+  <style>
+    #app div{
+      display: inline-block;
+      margin-right: 10px;
+      background-color: gray;
+    }
+  </style>
+
+</head>
+<body>
+  
+  <div id="app">
+    <div 
+      style="width: 200px; height: 200px"
+      :style="estilosCss">
+    </div>
+    <input v-model="cor" placeholder="Cor">
+    <input v-model.number="tamanho" placeholder="height em Pixels">
+    <input v-model.number="largura" placeholder="width Pixels">
+  </div>
+
+  
+  <script >
+
+	var app = new Vue({
+    el: '#app',
+    data:{
+      cor: '',
+      tamanho: '',
+      largura: '',
+    },
+    computed:{
+      estilosCss: function(){
+        return {
+          backgroundColor: this.cor,
+          height: this.tamanho + 'px',
+          width: this.largura + 'px', 
+        }
+      }
+    },
+  
+	});
+  </script>
+
+</body>
+</html>
