@@ -5,26 +5,36 @@
  	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   	<title>Document</title>
+	<style>
+		.separador{
+			list-style-type: none;
+			border-bottom: 1px solid black;
+		}
+	</style>
 </head>
 <body>
 
     <div id="app">
-		<h1>Produtos</h1>
+		<p>produtos</p>
 		<ul>
-			<li v-for="(produto, indice) in produtos">{{indice+1}} {{produto}}</li>
+			<template v-for="produto in produtos">
+				<li>{{produto.nome}}</li>
+				<li class="separador"></li>	
+			</template>
 		</ul>
 	</div>
 
 
-  	<script>
+  	<script >
 
 		var app = new Vue({
 		el: '#app',
 		data:{
-			produtos: [
-				'Monitor',
-				'Teclado',
-				'Mouse'
+			produtos:[
+				{id:1, nome: 'Monitor'},
+				{id:2, nome: 'Teclado'},
+				{id:3, nome: 'Mouse'},
+				{id:4, nome: 'Processador'},
 			]
 		},
 

@@ -9,23 +9,19 @@
 <body>
 
     <div id="app">
-		<h1>Produtos</h1>
 		<ul>
-			<li v-for="(produto, indice) in produtos">{{indice+1}} {{produto}}</li>
+			<li v-for="valor in 30">{{valor}}</li>
+			<!-- Tem como colocar o indice -->
 		</ul>
 	</div>
 
 
-  	<script>
+  	<script >
 
 		var app = new Vue({
 		el: '#app',
 		data:{
-			produtos: [
-				'Monitor',
-				'Teclado',
-				'Mouse'
-			]
+
 		},
 
 		});

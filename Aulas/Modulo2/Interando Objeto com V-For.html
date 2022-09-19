@@ -11,21 +11,22 @@
     <div id="app">
 		<h1>Produtos</h1>
 		<ul>
-			<li v-for="(produto, indice) in produtos">{{indice+1}} {{produto}}</li>
+			<li v-for="(valor, chave, indice) in produto">{{chave}}[{{indice}}]: {{valor}}</li>
 		</ul>
 	</div>
 
 
-  	<script>
+  	<script >
 
 		var app = new Vue({
 		el: '#app',
 		data:{
-			produtos: [
-				'Monitor',
-				'Teclado',
-				'Mouse'
-			]
+			produto:{
+				id: 1,
+				nome: 'Teclado',
+				marca: 'Dell',
+				valor: 100,
+			}
 		},
 
 		});
