@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<meta charset="UTF-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<title>Document</title>
+	  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+	
+</head>
+<body>
+
+    <div id="app">
+		<ul>
+			<li>Olá Vue</li>
+			<li>Item 1</li>
+			<template v-if="mostrar">
+				<li>Item 2</li>
+				<li>Item 3</li>
+			</template>
+		</ul>
+	</div>
+
+
+  	<script >
+
+		var app = new Vue({
+			el: '#app',
+			data:{
+				mostrar: true,
+			}
+		});
+		
+  	</script>
+	
+</body>
+</html>

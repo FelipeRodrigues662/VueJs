@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<meta charset="UTF-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  	<title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+		<h1>Produtos</h1>
+		<ul>
+			<li v-for="produto in produtos">{{produto}}</li>
+		</ul>
+		<br>
+		<ul>
+			<li v-for="produto of produtos">{{produto}}</li>
+		</ul>
+	</div>
+
+
+  	<script>
+
+		var app = new Vue({
+		el: '#app',
+		data:{
+			produtos: [
+				'Monitor',
+				'Teclado',
+				'Mouse'
+			]
+		},
+
+		});
+		
+  	</script>
+
+</body>
+</html>

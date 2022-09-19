@@ -7,6 +7,15 @@ v-html passa o html puro
 v-on ou @ manipulação de eventos
 v-model faz um two way data binding passando os valores e refletindo nos dois
 
+v-if condicional da mesma forma da logica de programação e so ultiliza boleans
+v-else
+v- else if 
+v-show trabalha baseada no display do css
+v-for trabalha como valores de um array para exibir na lista
+
+key tranformar em algo unico
+
+
 Coputed: trabalha com deependencias só será resecutada caso tenha um mudança;
 Methods: ele faz a cada rendenização
 Watch: ele ve qual propriedade que ele quer alterações 
