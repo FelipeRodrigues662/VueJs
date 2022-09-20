@@ -15,6 +15,14 @@ v-for trabalha como valores de um array para exibir na lista
 
 key tranformar em algo unico
 
+Métodos de Mutação:
+push()
+pop()
+shift()
+unsshift()
+slice() subistitui o array com dois parametreos um de começo o outro o fim
+sort()
+reverse()
 
 Coputed: trabalha com deependencias só será resecutada caso tenha um mudança;
 Methods: ele faz a cada rendenização

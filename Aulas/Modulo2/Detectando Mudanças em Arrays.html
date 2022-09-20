@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<meta charset="UTF-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  	<title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+		<h1>Produtos</h1>
+		<ul>
+			<li v-for="produto in produtos" :key="produto.id">{{produto.nome}}</li>
+		</ul>
+		<button @click="adProduto">Adicionar Produto</button>
+		<button @click="produtos = produtos.slice(0, 4)">Substituir Array</button>
+		<button @click="subProduto">Substituir Produto</button>
+		<button @click="cortarArray">Cortar Array</button>
+	</div>
+
+
+  	<script >
+
+		var app = new Vue({
+		el: '#app',
+		data:{
+			produtos:[
+				{id:1, nome: 'Monitor'},
+				{id:2, nome: 'Teclado'},
+				{id:3, nome: 'Mouse'},
+				{id:4, nome: 'Processador'},
+			]
+		}, 
+		methods: {
+			adProduto: function(event){
+				var id = this.produtos.length + 1;
+				this.produtos.push({id: id, nome: 'Produto' + id});
+			},
+			subProduto: function(event){
+				var tamanho = this.produtos.length;
+				var indice = Math.round(tamanho / 2);
+				var novoProduto = {id: (tamanho + 1), nome: 'Produto' + (tamanho + 1)};
+				console.log(tamanho, indice);
+				Vue.set(this.produtos, indice, novoProduto);
+			},
+			cortarArray: function(event){
+				this.produtos.splice(2);				
+			}
+
+			
+		},
+
+		});
+		
+  	</script>
+
+</body>
+</html>
