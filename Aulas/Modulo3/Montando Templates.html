@@ -9,30 +9,31 @@
 <body>
 
     <div id="app">
-		<h2>Instância Vue</h2>
-		<p>{{titulo}}</p>
-		<p>{{novaPropriedade}}</p>
-		<p>{{usuario}}</p>
+		<h2>{{curso}}</h2>
 	</div>
+
+	<div id="app2"></div>
 
 
   	<script >
 
 		var app = new Vue({
-		el: '#app',
+
 		data:{
-			titulo: 'Curso de VueJs',
-			usuario: {},
+			curso: 'Curso de VueJs'
 		},
 
 		});
-
-		setTimeout(function(){
-			app.novaPropriedade = 'Nova Propriedade';
-			Vue.set(app.usuario, 'nome', 'Felipe');
-		},3000);
-
 		
+		setTimeout(function(){
+			app.$mount('#app');
+		}, 3000);
+
+		var app2 = new Vue({
+			template: '<h2>Usando Template</h2>'
+		});
+
+		app2.$mount('#app2');
   	</script>
 
 </body>

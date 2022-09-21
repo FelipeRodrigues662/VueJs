@@ -9,10 +9,8 @@
 <body>
 
     <div id="app">
-		<h2>Instância Vue</h2>
-		<p>{{titulo}}</p>
-		<p>{{novaPropriedade}}</p>
-		<p>{{usuario}}</p>
+		<h2 ref="meuTitulo">{{titulo}}</h2>
+		<button @click="alterarTitulo">Alterar Titulo</button>
 	</div>
 
 
@@ -21,17 +19,19 @@
 		var app = new Vue({
 		el: '#app',
 		data:{
-			titulo: 'Curso de VueJs',
-			usuario: {},
+			titulo: 'Vue',
+		},
+		methods: {
+			alterarTitulo: function(event){
+				this.$refs.meuTitulo.innerText = 'VueJs';
+			}
 		},
 
 		});
 
 		setTimeout(function(){
-			app.novaPropriedade = 'Nova Propriedade';
-			Vue.set(app.usuario, 'nome', 'Felipe');
-		},3000);
-
+			app.titulo = 'Instancia Vue';
+		}, 5000);
 		
   	</script>
 

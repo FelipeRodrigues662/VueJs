@@ -9,29 +9,25 @@
 <body>
 
     <div id="app">
-		<h2>Instância Vue</h2>
-		<p>{{titulo}}</p>
-		<p>{{novaPropriedade}}</p>
-		<p>{{usuario}}</p>
+		<h2>Instancia 1</h2>
+		<meu-component></meu-component>
+		<meu-component></meu-component>
 	</div>
+
+	
 
 
   	<script >
 
+		Vue.component('meu-component', {
+			template: '<h3>Meu Primeiro Component Vue</h3>',
+		})
+
 		var app = new Vue({
 		el: '#app',
-		data:{
-			titulo: 'Curso de VueJs',
-			usuario: {},
-		},
 
+		
 		});
-
-		setTimeout(function(){
-			app.novaPropriedade = 'Nova Propriedade';
-			Vue.set(app.usuario, 'nome', 'Felipe');
-		},3000);
-
 		
   	</script>
 

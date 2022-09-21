@@ -14,6 +14,7 @@ v-show trabalha baseada no display do css
 v-for trabalha como valores de um array para exibir na lista
 
 key tranformar em algo unico
+$ref manipular o html diretamente
 
 Métodos de Mutação:
 push()
